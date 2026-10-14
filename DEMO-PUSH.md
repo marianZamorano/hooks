@@ -29,3 +29,5 @@ probar, confirmar y subir.
 
 `reiniciar-demo.ps1` restaura el codigo correcto; no lo ejecutes antes de
 mostrar el fallo intencional en Actions.
+
+## Agrego un comentario XD

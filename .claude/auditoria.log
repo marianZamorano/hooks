@@ -1,1 +1,9 @@
 2026-10-14 12:17:09 | Bash               | cd /c/UPB/hooks && rm -f .claude/auditoria.log && git status --short
+2026-10-14 13:00:56 | Bash               | git ls-files && echo ---- && find .claude -type f 2>/dev/null | head -50 && echo ---- && cat .claude/settings*.json 2>/d
+2026-10-14 13:01:01 | Bash               | for f in .claude/hooks/*.py hooks/verificar_push.py; do echo "===== $f"; cat "$f"; done; echo ====; tail -20 .claude/aud
+2026-10-14 13:01:33 | Bash               | S="C:/Users/MARIAN/AppData/Local/Temp/claude/c--Repositorios-Certi-miForkHook-hooks/ae985804-0ab9-46f1-9afa-54f2365e1f77
+2026-10-14 13:02:03 | Bash               | cat DEMO-PUSH.md | head -60; echo ====; git log --oneline -8 -- proyecto-demo/notas.py; cat reiniciar-demo.ps1 | head -3
+2026-10-14 13:02:30 | Write              | C:\Users\MARIAN\AppData\Local\Temp\claude\c--Repositorios-Certi-miForkHook-hooks\ae985804-0ab9-46f1-9afa-54f2365e1f77\sc
+2026-10-14 13:02:34 | Prueba             | prueba-manual
+2026-10-14 13:02:34 | Bash               | bash "/c/Users/MARIAN/AppData/Local/Temp/claude/c--Repositorios-Certi-miForkHook-hooks/ae985804-0ab9-46f1-9afa-54f2365e1
+2026-10-14 13:02:47 | Bash               | sed -i 's/"command": "python \\"/"command": "py -3 \\"/' .claude/settings.json && grep -n '"command"' .claude/settings.j
