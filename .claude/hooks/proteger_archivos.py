@@ -1,22 +1,19 @@
 """HOOK 1 · PreToolUse (Edit|Write)
-Bloquea cualquier intento de modificar las pruebas existentes o archivos de secretos.
-Crear un archivo de prueba NUEVO sí está permitido.
+Bloquea cualquier intento de modificar las pruebas o archivos de secretos.
 
 Entrada (stdin): JSON con tool_name y tool_input.file_path
 Salida:  exit 0 → se permite  |  exit 2 → se BLOQUEA y el mensaje de stderr le llega a Claude
 """
 import json
-import os
 import sys
 
 sys.stderr.reconfigure(encoding="utf-8")
 
 datos = json.loads(sys.stdin.buffer.read().decode("utf-8"))
-ruta_original = datos.get("tool_input", {}).get("file_path", "")
-ruta = ruta_original.replace("\\", "/")
+ruta = datos.get("tool_input", {}).get("file_path", "").replace("\\", "/")
 nombre = ruta.rsplit("/", 1)[-1]
 
-if "/tests/" in ruta and os.path.exists(ruta_original):
+if "/tests/" in ruta:
     print(
         f"⛔ BLOQUEADO por hook: '{nombre}' es una prueba y las pruebas están protegidas. "
         "Las pruebas definen las reglas de negocio: si una falla, corrige el código, no la prueba.",
